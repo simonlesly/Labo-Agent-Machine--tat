@@ -3,9 +3,16 @@ Listez les états ? Listez les événements ?
 Quel événement pourrait-on ajouter ?
 
 Labo Machine-État 2 --> 
-Illustrer une machine d'état qui permet de parser if(a==b) sans erreur
-Ajoute la reconnaissance de if(false)
-Ajouter une tolérance à la syntaxe if(0)
+
+1) Illustrer une machine d'état qui permet de parser if(a==b)
+![if(a==b)](https://github.com/user-attachments/assets/c9b5b376-bf83-4466-8f99-5a26382cb74d)
+
+
+
+2) Ajoute la reconnaissance de if(false)
+
+3) Ajouter une tolérance à la syntaxe if(0)
+
 Placer les images de vos machines d'état dans github, les faire afficher dans le readme et les expliquer.
 Expliquer comment améliorer le programme en tolérant des espaces
 
@@ -24,5 +31,19 @@ Labo Data Log -->
 - La mère porte le même foulard que A
 
 
+Expression du  problème :
+
+                          parent(mere,enfantA).
+                          parent(mere,enfantB).
+                          parent(mere,enfantC).
+                          
+                          foulardColor(enfantA,rouge).
+                          foulardColor(enfantB,bleu).
+                          foulardColor(enfantC,bleu).
+                          
+                          (parent(X,Y)  & foulardColor(Y,Z)) => MotherColor(X,Z).
+                          MotherColor(X,Y) => ChildColor(Y,X).
+                          
+                          MotherColor(X,rouge) => $ans(X).
 
 
