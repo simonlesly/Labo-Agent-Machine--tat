@@ -17,5 +17,12 @@ Labo Sortie du Nid -->
 
 Labo Data Log -->
 
+- Une famille de 3 enfant avec une mère et un père
+- Un enfant A porte un foulard rouge
+- Un enfant B porte un foulard bleu
+- Un enfant C porte un foulard bleu
+- La mère porte le même foulard que A
+
+
 
 
