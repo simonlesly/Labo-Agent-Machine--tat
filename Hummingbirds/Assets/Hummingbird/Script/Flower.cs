@@ -108,4 +108,18 @@ public class Flower : MonoBehaviour
         // Change the flower color to indicate that it is full
         flowerMaterial.SetColor("_BaseColor", fullFlowerColor);
     }
+
+     /// <summary>
+    /// Called when the flower wakes up
+    /// </summary>
+    private void Awake()
+    {
+        // Find the flower's mesh renderer and get the main material
+        MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
+        flowerMaterial = meshRenderer.material;
+
+        // Find flower and nectar colliders
+        flowerCollider = transform.Find("FlowerCollider").GetComponent<Collider>();
+        nectarCollider = transform.Find("FlowerNectarCollider").GetComponent<Collider>();
+    }
 }
