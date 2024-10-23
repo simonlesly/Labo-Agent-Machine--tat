@@ -153,6 +153,12 @@ public class HummingbirdAgent : Agent
 
     public override void CollectObservations(VectorSensor sensor)
     {
+        // If nearestFlower is null, observe an empty array and return early
+        if (nearestFlower == null)
+        {
+            sensor.AddObservation(new float[10]);
+            return;
+        }
         // Observe the agent's local rotation (4 observations)
         sensor.AddObservation(transform.localRotation.normalized);
 
@@ -161,6 +167,19 @@ public class HummingbirdAgent : Agent
 
         // Observe a normalized vector pointing to the nearest flower (3 observations)
         sensor.AddObservation(toFlower.normalized);
+
+         // Observe a dot product that indicates whether the beak tip is in front of the flower (1 observation)
+        // (+1 means that the beak tip is directly in front of the flower, -1 means directly behind)
+        sensor.AddObservation(Vector3.Dot(toFlower.normalized, -nearestFlower.FlowerUpVector.normalized));
+
+        // Observe a dot product that indicates whether the beak is pointing toward the flower (1 observation)
+        // (+1 means that the beak is pointing directly at the flower, -1 means directly away)
+        sensor.AddObservation(Vector3.Dot(beakTip.forward.normalized, -nearestFlower.FlowerUpVector.normalized));
+
+        // Observe the relative distance from the beak tip to the flower (1 observation)
+        sensor.AddObservation(toFlower.magnitude / FlowerArea.AreaDiameter);
+
+        // 10 total observations
     }
 
     /// <summary>
