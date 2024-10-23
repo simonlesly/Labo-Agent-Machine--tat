@@ -164,4 +164,31 @@ public class HummingbirdAgent : Agent
         transform.position = potentialPosition;
         transform.rotation = potentialRotation;
     }
+
+    /// <summary>
+    /// Update the nearest flower to the agent
+    /// </summary>
+    private void UpdateNearestFlower()
+    {
+        foreach (Flower flower in flowerArea.Flowers)
+        {
+            if (nearestFlower == null && flower.HasNectar)
+            {
+                // No current nearest flower and this flower has nectar, so set to this flower
+                nearestFlower = flower;
+            }
+            else if (flower.HasNectar)
+            {
+                // Calculate distance to this flower and distance to the current nearest flower
+                float distanceToFlower = Vector3.Distance(flower.transform.position, beakTip.position);
+                float distanceToCurrentNearestFlower = Vector3.Distance(nearestFlower.transform.position, beakTip.position);
+
+                // If current nearest flower is empty OR this flower is closer, update the nearest flower
+                if (!nearestFlower.HasNectar || distanceToFlower < distanceToCurrentNearestFlower)
+                {
+                    nearestFlower = flower;
+                }
+            }
+        }
+    }
 }
