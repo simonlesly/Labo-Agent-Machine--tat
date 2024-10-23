@@ -145,6 +145,23 @@ public class HummingbirdAgent : Agent
         // Apply the new rotation
         transform.rotation = Quaternion.Euler(pitch, yaw, 0f);
     }
+    
+    /// <summary> 
+    /// Collect vector observations from the environment
+    /// </summary>
+    /// <param name="sensor">The vector sensor</param>
+
+    public override void CollectObservations(VectorSensor sensor)
+    {
+        // Observe the agent's local rotation (4 observations)
+        sensor.AddObservation(transform.localRotation.normalized);
+
+        // Get a vector from the beak tip to the nearest flower
+        Vector3 toFlower = nearestFlower.FlowerCenterPosition - beakTip.position;
+
+        // Observe a normalized vector pointing to the nearest flower (3 observations)
+        sensor.AddObservation(toFlower.normalized);
+    }
 
     /// <summary>
     /// Move the agent to a safe random position (i.e. does not collide with anything)
