@@ -398,7 +398,7 @@ public class HummingbirdAgent : Agent
             }
         }
     }
-    
+
     /// <summary>
     /// Called when the agent collides with something solid
     /// </summary>
@@ -410,5 +410,15 @@ public class HummingbirdAgent : Agent
             // Collided with the area boundary, give a negative reward
             AddReward(-.5f);
         }
+    }
+
+    /// <summary>
+    /// Called every frame
+    /// </summary>
+    private void Update()
+    {
+        // Draw a line from the beak tip to the nearest flower
+        if (nearestFlower != null)
+            Debug.DrawLine(beakTip.position, nearestFlower.FlowerCenterPosition, Color.green);
     }
 }
