@@ -57,4 +57,49 @@ public class HummingbirdAgent : Agent
     /// </summary>
     public float NectarObtained { get; private set; }
 
+    /// <summary>
+    /// Initialize the agent
+    /// </summary>
+    public override void Initialize()
+    {
+        rigidbody = GetComponent<Rigidbody>();
+        flowerArea = GetComponentInParent<FlowerArea>();
+
+        // If not training mode, no max step, play forever
+        if (!trainingMode) MaxStep = 0;
+    }
+
+    /// <summary>
+    /// Reset the agent when an episode begins
+    /// </summary>
+    public override void OnEpisodeBegin()
+    {
+        if (trainingMode)
+        {
+            // Only reset flowers in training when there is one agent per area
+            flowerArea.ResetFlowers();
+        }
+
+        // Reset nectar obtained
+        NectarObtained = 0f;
+
+        // Zero out velocities so that movement stops before a new episode begins
+        rigidbody.velocity = Vector3.zero;
+        rigidbody.angularVelocity = Vector3.zero;
+
+        // Default to spawning in front of a flower
+        bool inFrontOfFlower = true;
+        if (trainingMode)
+        {
+            // Spawn in front of flower 50% of the time during training
+            inFrontOfFlower = UnityEngine.Random.value > .5f;
+        }
+
+        // Move the agent to a new random position
+        MoveToSafeRandomPosition(inFrontOfFlower);
+
+        // Recalculate the nearest flower now that the agent has moved
+        UpdateNearestFlower();
+    }
+
 }
