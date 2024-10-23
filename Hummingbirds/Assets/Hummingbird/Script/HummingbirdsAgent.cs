@@ -398,4 +398,17 @@ public class HummingbirdAgent : Agent
             }
         }
     }
+    
+    /// <summary>
+    /// Called when the agent collides with something solid
+    /// </summary>
+    /// <param name="collision">The collision info</param>
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (trainingMode && collision.collider.CompareTag("boundary"))
+        {
+            // Collided with the area boundary, give a negative reward
+            AddReward(-.5f);
+        }
+    }
 }
