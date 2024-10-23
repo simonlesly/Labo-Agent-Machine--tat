@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using Unity.MLAgents;
 using Unity.MLAgents.Sensors;
 using UnityEngine;
-
 /// <summary>
 /// A hummingbird Machine Learning Agent
 /// </summary>
@@ -100,6 +99,22 @@ public class HummingbirdAgent : Agent
 
         // Recalculate the nearest flower now that the agent has moved
         UpdateNearestFlower();
+    }
+    
+    /// <summary>
+    /// Called when and action is received from either the player input or the neural network
+    /// 
+    /// vectorAction[i] represents:
+    /// Index 0: move vector x (+1 = right, -1 = left)
+    /// Index 1: move vector y (+1 = up, -1 = down)
+    /// Index 2: move vector z (+1 = forward, -1 = backward)
+    /// Index 3: pitch angle (+1 = pitch up, -1 = pitch down)
+    /// Index 4: yaw angle (+1 = turn right, -1 = turn left)
+    /// </summary>
+    /// <param name="vectorAction">The actions to take</param>
+    public override void OnActionReceived(float[] vectorAction)
+    {
+
     }
 
     /// <summary>
