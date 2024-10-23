@@ -2,17 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HummingbirdsAgent : MonoBehaviour
+/// <summary>
+/// A hummingbird Machine Learning Agent
+/// </summary>
+public class HummingbirdAgent : Agent
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [Tooltip("Force to apply when moving")]
+    public float moveForce = 2f;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [Tooltip("Speed to pitch up or down")]
+    public float pitchSpeed = 100f;
+
+    [Tooltip("Speed to rotate around the up axis")]
+    public float yawSpeed = 100f;
+
+    [Tooltip("Transform at the tip of the beak")]
+    public Transform beakTip;
+
+    [Tooltip("The agent's camera")]
+    public Camera agentCamera;
+
+    [Tooltip("Whether this is training mode or gameplay mode")]
+    public bool trainingMode;
+
 }
