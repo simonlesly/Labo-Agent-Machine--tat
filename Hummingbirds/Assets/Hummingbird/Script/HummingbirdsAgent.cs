@@ -183,6 +183,17 @@ public class HummingbirdAgent : Agent
     }
 
     /// <summary>
+    /// When Behavior Type is set to "Heuristic Only" on the agent's Behavior Parameters,
+    /// this function will be called. Its return values will be fed into
+    /// <see cref="OnActionReceived(float[])"/> instead of using the neural network
+    /// </summary>
+    /// <param name="actionsOut">And output action array</param>
+    public override void Heuristic(float[] actionsOut)
+    {
+        
+    }
+
+    /// <summary>
     /// Move the agent to a safe random position (i.e. does not collide with anything)
     /// If in front of flower, also point the beak at the flower
     /// </summary>
