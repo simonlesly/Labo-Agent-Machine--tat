@@ -250,7 +250,7 @@ public class HummingbirdAgent : Agent
         frozen = false;
         rigidbody.WakeUp();
     }
-    
+
     /// <summary>
     /// Move the agent to a safe random position (i.e. does not collide with anything)
     /// If in front of flower, also point the beak at the flower
@@ -338,6 +338,39 @@ public class HummingbirdAgent : Agent
                     nearestFlower = flower;
                 }
             }
+        }
+    }
+     /// <summary>
+    /// Called when the agent's collider enters a trigger collider
+    /// </summary>
+    /// <param name="other">The trigger collider</param>
+    private void OnTriggerEnter(Collider other)
+    {
+        TriggerEnterOrStay(other);
+    }
+
+    /// <summary>
+    /// Called when the agent's collider stays in a trigger collider
+    /// </summary>
+    /// <param name="other">The trigger collider</param>
+    private void OnTriggerStay(Collider other)
+    {
+        TriggerEnterOrStay(other);
+    }
+
+    /// <summary>
+    /// Handles when the agen'ts collider enters or stays in a trigger collider
+    /// </summary>
+    /// <param name="collider">The trigger collider</param>
+    private void TriggerEnterOrStay(Collider collider)
+    {
+        // Check if agent is colliding with nectar
+        if (collider.CompareTag("nectar"))
+        {
+            Vector3 closestPointToBeakTip = collider.ClosestPoint(beakTip.position);
+
+            // Check if the closest collision point is close to the beak tip
+            // Note: a collision with anything but the beak tip should not count
         }
     }
 }
