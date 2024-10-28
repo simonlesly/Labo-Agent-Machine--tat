@@ -2,7 +2,7 @@ Labo Machine-État 1 --> lien [ici](https://colab.research.google.com/drive/1DQw
 
 Listez les états ? il y a trois états : bien, peur et faim \
 Listez les événements ? il y a quatre événements  : recevoir_nourriture, ennemi_arrive, ami_arrive et ennemi_quitte\
-Quel événement pourrait-on ajouter ? On pourrait ajouter un événement comme "jouer". Si ami est là ou que le Tamagotchi est bien, il joue.
+Quel événement pourrait-on ajouter ? On pourrait ajouter un événement "jouer". Si ami est là ou que le Tamagotchi est bien, il joue.
 
 
 Labo Machine-État 2 --> 
