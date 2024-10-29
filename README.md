@@ -18,7 +18,7 @@ Labo Machine-État 2 -->
 Labo Sortie du Nid -->  lien du projet [ici](https://github.com/simonlesly/Labo_Agent_Machine_Etat/tree/main/Hummingbirds)
 
 
-- lien résultat -->  [ici]()
+- lien dossier résultat -->  [ici](https://github.com/simonlesly/Labo_Agent_Machine_Etat/tree/main/results)
 
 
 Training :
