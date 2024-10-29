@@ -1,6 +1,9 @@
-Labo Machine-État 1 --> 
-Listez les états ? Listez les événements ?
-Quel événement pourrait-on ajouter ?
+Labo Machine-État 1 --> lien [ici](https://colab.research.google.com/drive/1DQwYecQrYvq6OLtB1I8Qdnta9HG80Di3?usp=sharing)
+
+Listez les états ? il y a trois états : bien, peur et faim \
+Listez les événements ? il y a quatre événements  : recevoir_nourriture, ennemi_arrive, ami_arrive et ennemi_quitte\
+Quel événement pourrait-on ajouter ? On pourrait ajouter un événement "jouer". Si ami est là ou que le Tamagotchi est bien, il joue.
+
 
 Labo Machine-État 2 --> 
 
@@ -8,14 +11,8 @@ Labo Machine-État 2 -->
 ![if(a==b)](https://github.com/user-attachments/assets/c9b5b376-bf83-4466-8f99-5a26382cb74d)
 
 
-
-2) Ajoute la reconnaissance de if(false)
-
-3) Ajouter une tolérance à la syntaxe if(0)
-
-Placer les images de vos machines d'état dans github, les faire afficher dans le readme et les expliquer.
-Expliquer comment améliorer le programme en tolérant des espaces
-
+2) Ajoute la reconnaissance de if(false) 
+![machine-etat2](https://github.com/user-attachments/assets/16d40c50-d649-445c-b216-61689c4d44a4)
 
 
 Labo Sortie du Nid -->  lien du projet [ici](https://github.com/simonlesly/Labo_Agent_Machine_Etat/tree/main/Hummingbirds)
