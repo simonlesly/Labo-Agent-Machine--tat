@@ -1,0 +1,42 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1730169115",
+        "python_version": "3.9.20 (main, Oct  3 2024, 07:38:01) [MSC v.1929 64 bit (AMD64)]",
+        "command_line_arguments": "C:\\Users\\adminlocalinfo\\anaconda3\\envs\\ml-agents-1.0\\Scripts\\mlagents-learn ./trainer_config.yaml --run-id hb_02",
+        "mlagents_version": "0.30.0",
+        "mlagents_envs_version": "0.30.0",
+        "communication_protocol_version": "1.5.0",
+        "pytorch_version": "2.5.0+cu124",
+        "numpy_version": "1.21.2",
+        "end_time_seconds": "1730169148"
+    },
+    "total": 32.0941675,
+    "count": 1,
+    "self": 0.008692099999997538,
+    "children": {
+        "run_training.setup": {
+            "total": 0.1007201000000002,
+            "count": 1,
+            "self": 0.1007201000000002
+        },
+        "TrainerController.start_learning": {
+            "total": 31.9847553,
+            "count": 1,
+            "self": 8.189999999785869e-05,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 31.984655399999998,
+                    "count": 1,
+                    "self": 31.984655399999998
+                },
+                "TrainerController._save_models": {
+                    "total": 1.800000000429236e-05,
+                    "count": 1,
+                    "self": 1.800000000429236e-05
+                }
+            }
+        }
+    }
+}
