@@ -18,6 +18,19 @@ Labo Machine-État 2 -->
 Labo Sortie du Nid -->  lien du projet [ici](https://github.com/simonlesly/Labo_Agent_Machine_Etat/tree/main/Hummingbirds)
 
 
+- lien résultat -->  [ici]()
+
+
+Training :
+![training1](https://github.com/user-attachments/assets/2a65cebd-0afc-4628-b1fe-fd35a3869ca5)
+
+
+Tensorboard :
+![tensordboard](https://github.com/user-attachments/assets/0e45cbe2-97cc-47e3-b1d0-a7b27fda5037)
+
+
+
+
 Labo Data Log -->
 
 - Une famille de 3 enfant avec une mère et un père
